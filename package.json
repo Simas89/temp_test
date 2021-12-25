@@ -23,6 +23,7 @@
     "@mui/styled-engine-sc": "^5.1.0",
     "@mui/styles": "^5.1.0",
     "@reduxjs/toolkit": "^1.6.2",
+    "@svgr/webpack": "^6.1.2",
     "add": "^2.0.6",
     "axios": "^0.24.0",
     "babel-plugin-styled-components": "^1.13.3",

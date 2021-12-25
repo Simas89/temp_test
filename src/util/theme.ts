@@ -2,17 +2,38 @@ import {
   createTheme,
   responsiveFontSizes,
   Palette as DefaultPalette,
+  PaletteColor,
 } from '@mui/material/styles';
 
+interface PaletteColorWithShadow extends PaletteColor {
+  shadow: string;
+}
+
 interface Palette extends DefaultPalette {
-  bg: string;
+  primary: PaletteColorWithShadow;
+  white: string;
+  black: string;
+}
+
+export enum ThemeColors {
+  PRIMARY = '#ED6C50',
+  WHITE = '#FFFFFF',
+  BLACK = '#191919',
+  BACKGROUND = '#F6F6F6',
+}
+export enum ThemeColorsEnum {
+  'PRIMARY' = 'PRIMARY',
+  'WHITE' = 'WHITE',
+  'BLACK' = 'BLACK',
+  'BACKGROUND' = 'BACKGROUND',
 }
 
 let theme = createTheme({
   palette: {
-    primary: { main: '#ED6C50' },
+    primary: { main: ThemeColors.PRIMARY, shadow: 'rgba(255, 108, 75, 0.3)' },
     secondary: { main: '#ffcb2d' },
-    bg: '#F6F6F6',
+    white: ThemeColors.WHITE,
+    black: ThemeColors.BLACK,
   } as Palette,
   components: {
     MuiButton: { defaultProps: { disableRipple: true } },
@@ -20,7 +41,7 @@ let theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: '#F6F6F6',
+          backgroundColor: ThemeColors.BACKGROUND,
           // overflowX: 'hidden',
         },
       },

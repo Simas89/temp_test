@@ -1,5 +1,5 @@
-export enum ComponentType {
-  ITEM_A = 'ITEM_A',
-  ITEM_B = 'ITEM_B',
-  ITEM_C = 'ITEM_C',
+export enum ThemeColors_dep {
+  'PRIMARY' = 'PRIMARY',
+  'WHITE' = 'WHITE',
+  'BLACK' = 'BLACK',
 }
