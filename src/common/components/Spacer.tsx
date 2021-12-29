@@ -18,6 +18,7 @@ export const Spacer = styled.div<SpacerProps>`
       css`
         height: ${xs}px;
         width: ${horizontal ? `${xs}px` : 'unset'};
+        min-width: ${horizontal ? `${xs}px` : 'unset'};
       `};
   }
 
@@ -27,6 +28,7 @@ export const Spacer = styled.div<SpacerProps>`
       css`
         height: ${sm}px;
         width: ${horizontal ? `${sm}px` : 'unset'};
+        min-width: ${horizontal ? `${sm}px` : 'unset'};
       `};
   }
 
@@ -36,6 +38,7 @@ export const Spacer = styled.div<SpacerProps>`
       css`
         height: ${md}px;
         width: ${horizontal ? `${md}px` : 'unset'};
+        min-width: ${horizontal ? `${md}px` : 'unset'};
       `};
   }
 
@@ -45,6 +48,7 @@ export const Spacer = styled.div<SpacerProps>`
       css`
         height: ${lg}px;
         width: ${horizontal ? `${lg}px` : 'unset'};
+        min-width: ${horizontal ? `${lg}px` : 'unset'};
       `};
   }
   ${({ theme }) => theme.breakpoints.up('xl')} {
@@ -53,6 +57,7 @@ export const Spacer = styled.div<SpacerProps>`
       css`
         height: ${xl}px;
         width: ${horizontal ? `${xl}px` : 'unset'};
+        min-width: ${horizontal ? `${xl}px` : 'unset'};
       `};
   }
 
@@ -60,5 +65,7 @@ export const Spacer = styled.div<SpacerProps>`
     border &&
     css`
       border: 1px solid red;
-    `}
+    `};
+
+  /* border: 1px solid red; */
 `;

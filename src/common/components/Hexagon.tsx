@@ -3,7 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 interface StyleProps {
-  size: 'SMALL' | 'MEDIUM';
+  size: 'SMALL' | 'MEDIUM' | 'LARGE';
   shadow?: boolean;
 }
 
@@ -17,6 +17,11 @@ const styleData = {
     width: 292,
     height: 300,
     scale: 1,
+  },
+  LARGE: {
+    width: 395,
+    height: 400,
+    scale: 1.35,
   },
 };
 
@@ -72,8 +77,10 @@ export const Hexagon: React.FC<HexagonProps> = ({ href, size, shadow }) => {
             </clipPath>
           </defs>
           <image
+            // style={{ minWidth: '100%', minHeight: '100%' }}
             href={href}
             clipPath='url(#hexagonClip)'
+            // preserveAspectRatio='xMidYMid slice'
             preserveAspectRatio='xMidYMid slice'
             height='100%'
             width='100%'

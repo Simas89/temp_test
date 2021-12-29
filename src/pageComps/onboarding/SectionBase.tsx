@@ -6,20 +6,21 @@ interface SectionWrapperProps {}
 
 const SectionWrapper = styled.section<SectionWrapperProps>`
   position: relative;
-  height: 100vh;
   min-width: 100vw;
   display: flex;
-  /* border: 1px solid white; */
+  overflow: hidden;
 `;
 
-export const SectionContainer = styled.div`
-  /* border: 1px solid green; */
+export const SectionContainer = styled.div<{ fullHeight?: boolean }>`
+  border: 1px solid green;
   position: relative;
   flex: 1;
-  padding: 54px 10px 0 10px;
+  padding: 54px 20px 0 20px;
   margin: 0 auto;
-  max-width: 500px;
-  height: 85vh;
+  max-width: 600px;
+  height: ${({ fullHeight }) => (fullHeight ? 100 : 85)}vh;
+
+  /* height: fill-available; */
 `;
 
 interface SectionBaseProps {

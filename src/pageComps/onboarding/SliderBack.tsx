@@ -36,8 +36,8 @@ const Div = styled.div`
     transform: scaleX(-1) scaleY(-1);
   }
   .bg3 {
-    top: -40px;
-    right: -45px;
+    top: -57px;
+    right: calc(50% - 172px);
   }
 `;
 
@@ -49,59 +49,95 @@ interface SliderProps {
 }
 
 export const SliderBack: React.FC<SliderProps> = ({ slide, width }) => {
+  const variants = {
+    visible: {
+      opacity: 1,
+      transition: { type: 'tween', duration: 0.1 },
+    },
+    hidden: {
+      opacity: 0,
+      transition: { type: 'tween', duration: 0.1 },
+    },
+  };
+
+  const slidesGap = 50;
   return (
     <MotionDiv
       animate={{
-        x: (-width - 50) * slide,
+        x: (-width - slidesGap) * slide,
       }}
-      transition={{ type: 'spring', delay: 0.1, duration: 1 }}
+      transition={{
+        type: 'spring',
+        delay: 0.1,
+        mass: 1,
+        stiffness: 60,
+        damping: 12,
+        restDelta: 0.001,
+        restSpeed: 0.001,
+      }}
     >
       <SectionBase>
         <motion.img
-          animate={{ opacity: slide === 0 ? 1 : 0 }}
-          transition={{ type: 'tween', duration: 0.1 }}
+          variants={variants}
+          initial='hidden'
+          animate={slide === 0 ? 'visible' : 'hidden'}
           className='bg bg0'
           src='assets/svg/onboardingBG_A.svg'
           alt=''
         />
       </SectionBase>
-      <Spacer horizontal xs={50} />
+      <Spacer horizontal xs={slidesGap} />
       <SectionBase>
         <motion.img
-          animate={{ opacity: slide === 1 ? 1 : 0 }}
-          transition={{ type: 'tween', duration: 0.1 }}
+          variants={variants}
+          initial='hidden'
+          animate={slide === 1 ? 'visible' : 'hidden'}
           className='bg bg1'
           src='assets/svg/onboardingBG_B.svg'
           alt=''
         />
       </SectionBase>
-      <Spacer horizontal xs={50} />
+      <Spacer horizontal xs={slidesGap} />
       <SectionBase>
         <motion.img
-          animate={{ opacity: slide === 2 ? 1 : 0 }}
-          transition={{ type: 'tween', duration: 0.1 }}
+          variants={variants}
+          initial='hidden'
+          animate={slide === 2 ? 'visible' : 'hidden'}
           className='bg bg2'
           src='assets/svg/onboardingBG_A.svg'
           alt=''
         />
       </SectionBase>
-      <Spacer horizontal xs={50} />
+      <Spacer horizontal xs={slidesGap} />
       <SectionBase>
         <motion.img
-          animate={{ opacity: slide === 3 ? 1 : 0 }}
-          transition={{ type: 'tween', duration: 0.1 }}
+          variants={variants}
+          initial='hidden'
+          animate={slide === 3 ? 'visible' : 'hidden'}
           className='bg bg0'
           src='assets/svg/onboardingBG_A.svg'
           alt=''
         />
       </SectionBase>
-      <Spacer horizontal xs={50} />
+      <Spacer horizontal xs={slidesGap} />
       <SectionBase>
         <motion.img
-          animate={{ opacity: slide === 4 ? 1 : 0 }}
-          transition={{ type: 'tween', duration: 0.1 }}
+          variants={variants}
+          initial='hidden'
+          animate={slide === 4 ? 'visible' : 'hidden'}
           className='bg bg1'
           src='assets/svg/onboardingBG_B.svg'
+          alt=''
+        />
+      </SectionBase>
+      <Spacer horizontal xs={slidesGap} />
+      <SectionBase>
+        <motion.img
+          variants={variants}
+          initial='hidden'
+          animate={slide === 5 ? 'visible' : 'hidden'}
+          className='bg bg3'
+          src='assets/svg/mainBG.svg'
           alt=''
         />
       </SectionBase>

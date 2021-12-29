@@ -4,3 +4,8 @@ export * from './SliderBackground';
 export * from './SliderBack';
 export * from './SliderFront';
 export * from './SectionBase';
+export * from './StickyLogo';
+export * from './AuthSlide';
+export * from './SocialButtons';
+export * from './SignUpForm';
+export * from './SignInForm';

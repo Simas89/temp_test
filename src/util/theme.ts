@@ -7,6 +7,7 @@ import {
 
 interface PaletteColorWithShadow extends PaletteColor {
   shadow: string;
+  shadowHover: string;
 }
 
 interface Palette extends DefaultPalette {
@@ -19,7 +20,7 @@ export enum ThemeColors {
   PRIMARY = '#ED6C50',
   WHITE = '#FFFFFF',
   BLACK = '#191919',
-  BACKGROUND = '#F6F6F6',
+  BACKGROUND = '#E5E5E5',
 }
 export enum ThemeColorsEnum {
   'PRIMARY' = 'PRIMARY',
@@ -30,7 +31,11 @@ export enum ThemeColorsEnum {
 
 let theme = createTheme({
   palette: {
-    primary: { main: ThemeColors.PRIMARY, shadow: 'rgba(255, 108, 75, 0.3)' },
+    primary: {
+      main: ThemeColors.PRIMARY,
+      shadow: 'rgba(255, 108, 75, 0.3)',
+      shadowHover: 'rgba(255, 108, 75, 0.6)',
+    },
     secondary: { main: '#ffcb2d' },
     white: ThemeColors.WHITE,
     black: ThemeColors.BLACK,
